@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Security.Principal;
 
 namespace GestorDeReservasWeb.Model
 {
@@ -12,6 +13,7 @@ namespace GestorDeReservasWeb.Model
         public string email { get; set; }
         public Direccion idDireccion { get; set; }
         public int telefono { get; set; }
+        public Rol rol { get; set; }
 
     }
 }
