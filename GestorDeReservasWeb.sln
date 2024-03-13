@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestorDeReservasWeb.BL", "G
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GestorDeReservasWeb.DA", "GestorDeReservasWeb.DA\GestorDeReservasWeb.DA.csproj", "{352156E3-EF91-45B7-B906-4AEAA47AA9DD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestorDeReservasWeb.API", "GestorDeReservasWeb.API\GestorDeReservasWeb.API.csproj", "{B35C8F8A-20A8-41D0-A020-4C62968666AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{352156E3-EF91-45B7-B906-4AEAA47AA9DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{352156E3-EF91-45B7-B906-4AEAA47AA9DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{352156E3-EF91-45B7-B906-4AEAA47AA9DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35C8F8A-20A8-41D0-A020-4C62968666AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35C8F8A-20A8-41D0-A020-4C62968666AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35C8F8A-20A8-41D0-A020-4C62968666AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35C8F8A-20A8-41D0-A020-4C62968666AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
