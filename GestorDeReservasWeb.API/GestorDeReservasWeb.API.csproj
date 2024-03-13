@@ -11,4 +11,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestorDeReservasWeb.BL\GestorDeReservasWeb.BL.csproj" />
+    <ProjectReference Include="..\GestorDeReservasWeb.Model\GestorDeReservasWeb.Model.csproj" />
+  </ItemGroup>
+
 </Project>
