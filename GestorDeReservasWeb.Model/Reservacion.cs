@@ -13,5 +13,6 @@ namespace GestorDeReservasWeb.Model
         public TipoDeCita idTipoDeCita { get; set; }
         public Persona idPersona { get; set; }
         public string encargado { get; set; }
+        public Estado estado { get; set; } 
     }
 }
