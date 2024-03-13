@@ -14,6 +14,7 @@ namespace GestorDeReservasWeb.BL
         public void RegisterReservation(Model.Reservacion reservacion);
         public void RegisterPerson(Model.Persona persona);
         public List<Model.Reservacion> GetAllReservacion();
+        public void EditeLaReservacion(Model.Reservacion reservacion);
         public void ElimineLaReservacion(Model.Reservacion reservacion);
         public Model.Persona GetPersona(int id);
         public Model.Reservacion GetReservation(int id);
