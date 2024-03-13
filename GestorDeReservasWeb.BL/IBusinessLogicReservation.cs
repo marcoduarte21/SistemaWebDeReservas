@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Schema;
 
+
 namespace GestorDeReservasWeb.BL
 {
     public interface IBusinessLogicReservation
     {
 
-        public void RegisterReservation(Persona persona);
+        public void RegisterReservation();
     }
 }
