@@ -10,6 +10,6 @@ namespace GestorDeReservasWeb.BL
     public interface IBusinessLogicReservation
     {
 
-        public void RegisterReservation();
+        public void RegisterReservation(Persona persona);
     }
 }
