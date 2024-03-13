@@ -1,9 +1,17 @@
-﻿using GestorDeReservasWeb.Model;
+﻿using GestorDeReservasWeb.DA;
+using GestorDeReservasWeb.Model;
 
 namespace GestorDeReservasWeb.BL
 {
     public class BusinessLogicReservation : IBusinessLogicReservation
     {
+        private DA.DbContexto context;
+
+        public BusinessLogicReservation(DbContexto Context)
+        {
+            context = Context;
+        }
+
         public void EditeLaReservacion(Reservacion reservacion)
         {
             throw new NotImplementedException();
