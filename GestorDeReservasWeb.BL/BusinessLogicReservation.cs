@@ -14,37 +14,63 @@ namespace GestorDeReservasWeb.BL
 
         public void EditeLaReservacion(Reservacion reservacion)
         {
-            throw new NotImplementedException();
+            Model.Reservacion reservamodificada;
+            reservamodificada = GetReservation(reservacion.id);
+
+            reservamodificada.fecha = reservacion.fecha;
+            context.Reservacion.Update(reservamodificada);
+            context.SaveChanges();
+
         }
 
         public void ElimineLaReservacion(Reservacion reservacion)
         {
-            throw new NotImplementedException();
+            Model.Reservacion eliminarReserva = GetReservation(reservacion.id);
+            context.Reservacion.Remove(eliminarReserva);
+            context.SaveChanges();
         }
 
         public List<Reservacion> GetAllReservacion()
         {
-            throw new NotImplementedException();
+            return context.Reservacion.ToList();
         }
 
         public Persona GetPersona(int id)
         {
-            throw new NotImplementedException();
+            foreach(var persona in context.Persona)
+            {
+                if(persona.id == id)
+                {
+                    return persona;
+                }
+            }
+            return null;
         }
 
         public Reservacion GetReservation(int id)
         {
-            throw new NotImplementedException();
+
+            foreach (var cita in context.Reservacion)
+            {
+                if (cita.id == id)
+                {
+                    return cita;
+                }
+            }
+            return null;
         }
 
         public void RegisterPerson(Persona persona)
         {
-            throw new NotImplementedException();
+            context.Persona.Add(persona);
+            context.SaveChanges();
+            
         }
 
         public void RegisterReservation(Reservacion reservacion)
         {
-            throw new NotImplementedException();
+            context.Reservacion.Add(reservacion);
+            context.SaveChanges();
         }
     }
 }
