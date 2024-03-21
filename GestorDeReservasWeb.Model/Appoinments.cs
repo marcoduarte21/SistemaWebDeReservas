@@ -13,6 +13,6 @@ namespace GestorDeReservasWeb.Model
         public TipoDeCita appoinmentType { get; set; }
         public Users clientUser { get; set; }
         public Employees employeeInChange { get; set; }
-        public State statte { get; set; } 
+        public AppoinmentState statte { get; set; } 
     }
 }
