@@ -10,5 +10,6 @@ namespace GestorDeReservasWeb.Model
     {
         DISPONIBLE = 1,
         RESERVADA = 2,
+        FINALIZADA = 3,
     }
 }
