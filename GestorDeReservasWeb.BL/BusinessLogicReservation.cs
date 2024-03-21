@@ -12,9 +12,9 @@ namespace GestorDeReservasWeb.BL
             context = Context;
         }
 
-        public void EditeLaReservacion(Appoinments reservacion)
+        public void EditeLaReservacion(Appoinment reservacion)
         {
-            Model.Appoinments reservamodificada;
+            Model.Appoinment reservamodificada;
             reservamodificada = GetReservation(reservacion.id);
 
             reservamodificada.fecha = reservacion.fecha;
@@ -23,14 +23,14 @@ namespace GestorDeReservasWeb.BL
 
         }
 
-        public void ElimineLaReservacion(Appoinments reservacion)
+        public void ElimineLaReservacion(Appoinment reservacion)
         {
-            Model.Appoinments eliminarReserva = GetReservation(reservacion.id);
+            Model.Appoinment eliminarReserva = GetReservation(reservacion.id);
             context.Reservacion.Remove(eliminarReserva);
             context.SaveChanges();
         }
 
-        public List<Appoinments> GetAllReservacion()
+        public List<Appoinment> GetAllReservacion()
         {
             return context.Reservacion.ToList();
         }
@@ -47,7 +47,7 @@ namespace GestorDeReservasWeb.BL
             return null;
         }
 
-        public Appoinments GetReservation(int id)
+        public Appoinment GetReservation(int id)
         {
 
             foreach (var cita in context.Reservacion)
@@ -67,7 +67,7 @@ namespace GestorDeReservasWeb.BL
             
         }
 
-        public void RegisterReservation(Appoinments reservacion)
+        public void RegisterReservation(Appoinment reservacion)
         {
             context.Reservacion.Add(reservacion);
             context.SaveChanges();

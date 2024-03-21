@@ -17,7 +17,7 @@ namespace GestorDeReservasWeb.API.Controllers
         }
 
         [HttpGet("GetReservations")]
-        public List<Model.Appoinments> GetReservations()
+        public List<Model.Appoinment> GetReservations()
         {
             return BusinessLogicReservation.GetAllReservacion();
         }

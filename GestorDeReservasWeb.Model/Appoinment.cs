@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace GestorDeReservasWeb.Model
 {
-    public class Appoinments
+    public class Appoinment
     {
         public int id {  get; set; }
         public DateTime datte { get; set; }
         public TipoDeCita appoinmentType { get; set; }
-        public Users clientUser { get; set; }
-        public Employees employeeInChange { get; set; }
+        public User clientUser { get; set; }
+        public Employee employeeInChange { get; set; }
         public AppoinmentState statte { get; set; } 
     }
 }

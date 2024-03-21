@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestorDeReservasWeb.Model
 {
-    public class Users
+    public class User
     {
        public string userId {  get; set; }
         public string idPerson { get; set; }

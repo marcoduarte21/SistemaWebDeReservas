@@ -1,6 +1,6 @@
 ﻿namespace GestorDeReservasWeb.Model
 {
-    public class Employees
+    public class Employee
     {
         public string employeeId {  get; set; }
         public string userId { get; set; }

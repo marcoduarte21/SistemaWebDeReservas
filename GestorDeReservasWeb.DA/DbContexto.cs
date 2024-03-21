@@ -9,14 +9,11 @@ namespace GestorDeReservasWeb.DA
             
         }
 
-        public DbSet<Model.People> Persona { get; set; }
-        public DbSet<Model.Direccion> Direccion { get; set; }
-        public DbSet<Model.Users> Provincia { get; set; }
-        public DbSet<Model.Canton> Canton { get; set; }
-        public DbSet<Model.Distrito> Distrito { get; set; }
-        public DbSet<Model.Localidad> Localidad { get; set; }
-        public DbSet<Model.Appoinments> Reservacion { get; set; }
-        public DbSet<Model.TipoDeCita> TipoDeCita { get; set; }
+        public DbSet<Model.People> People { get; set; }
+        public DbSet<Model.Appoinment> Appoinments { get; set; }
+        public DbSet<Model.User> Users { get; set; }
+        public DbSet<Model.Employee> Employees { get; set; }
+
 
     }
 }
