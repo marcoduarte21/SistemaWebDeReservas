@@ -12,9 +12,9 @@ namespace GestorDeReservasWeb.BL
             context = Context;
         }
 
-        public void EditeLaReservacion(Reservacion reservacion)
+        public void EditeLaReservacion(Appoinments reservacion)
         {
-            Model.Reservacion reservamodificada;
+            Model.Appoinments reservamodificada;
             reservamodificada = GetReservation(reservacion.id);
 
             reservamodificada.fecha = reservacion.fecha;
@@ -23,19 +23,19 @@ namespace GestorDeReservasWeb.BL
 
         }
 
-        public void ElimineLaReservacion(Reservacion reservacion)
+        public void ElimineLaReservacion(Appoinments reservacion)
         {
-            Model.Reservacion eliminarReserva = GetReservation(reservacion.id);
+            Model.Appoinments eliminarReserva = GetReservation(reservacion.id);
             context.Reservacion.Remove(eliminarReserva);
             context.SaveChanges();
         }
 
-        public List<Reservacion> GetAllReservacion()
+        public List<Appoinments> GetAllReservacion()
         {
             return context.Reservacion.ToList();
         }
 
-        public Persona GetPersona(int id)
+        public People GetPersona(int id)
         {
             foreach(var persona in context.Persona)
             {
@@ -47,7 +47,7 @@ namespace GestorDeReservasWeb.BL
             return null;
         }
 
-        public Reservacion GetReservation(int id)
+        public Appoinments GetReservation(int id)
         {
 
             foreach (var cita in context.Reservacion)
@@ -60,14 +60,14 @@ namespace GestorDeReservasWeb.BL
             return null;
         }
 
-        public void RegisterPerson(Persona persona)
+        public void RegisterPerson(People persona)
         {
             context.Persona.Add(persona);
             context.SaveChanges();
             
         }
 
-        public void RegisterReservation(Reservacion reservacion)
+        public void RegisterReservation(Appoinments reservacion)
         {
             context.Reservacion.Add(reservacion);
             context.SaveChanges();

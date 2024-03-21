@@ -1,6 +1,6 @@
 ﻿namespace GestorDeReservasWeb.Model
 {
-    public enum Estado
+    public enum State
     {
         DISPONIBLE = 1,
         OCUPADO = 2,

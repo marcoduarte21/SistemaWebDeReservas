@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace GestorDeReservasWeb.Model
 {
-    public class TipoDeCita
+    public enum TipoDeCita
     {
-        public int id { get; set; }
-        public string tipo { get; set; }
+      VIRTUAL = 1,
+      PRESENCIAL = 2
     }
 }
