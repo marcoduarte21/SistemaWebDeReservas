@@ -29,17 +29,17 @@ namespace GestorDeReservasWeb.BL.Admin
 
         public List<Appoinment> GetAppoinments()
         {
-            throw new NotImplementedException();
+           return DbContexto.Appoinments.ToList();
         }
 
-        public Employee GetEmployee(string id)
+        public Model.Employee GetEmployee(string id)
         {
             throw new NotImplementedException();
         }
 
-        public List<Employee> GetEmployees()
+        public List<Model.Employee> GetEmployees()
         {
-            throw new NotImplementedException();
+           return DbContexto.Employees.ToList();
         }
 
         public People GetPerson(int id)
@@ -49,37 +49,48 @@ namespace GestorDeReservasWeb.BL.Admin
 
         public List<Appoinment> GetProgrammedAppoinments()
         {
-            throw new NotImplementedException();
+            return DbContexto.Appoinments.ToList();
         }
 
         public User GetUser(string id)
         {
-            throw new NotImplementedException();
+           foreach(var user in DbContexto.Users)
+            {
+                if(user.userId == id)
+                {
+                    return user;
+                }
+            }
+            return null;
         }
 
         public List<User> GetUsers()
         {
-            throw new NotImplementedException();
+            return DbContexto.Users.ToList();
         }
 
         public void RegisterAppoinment(Appoinment appoinment)
         {
-            throw new NotImplementedException();
+            DbContexto.Appoinments.Add(appoinment);
+            DbContexto.SaveChanges();
         }
 
-        public void RegisterEmployee(Employee employee)
+        public void RegisterEmployee(Model.Employee employee)
         {
-            throw new NotImplementedException();
+            DbContexto.Employees.Add(employee);
+            DbContexto.SaveChanges();
         }
 
         public void RegisterPerson(People person)
         {
-            throw new NotImplementedException();
+            DbContexto.People.Add(person);
+            DbContexto.SaveChanges();
         }
 
         public void RegisterUser(User user)
         {
-            throw new NotImplementedException();
+           DbContexto.Users.Add(user);
+            DbContexto.SaveChanges();
         }
     }
 }
