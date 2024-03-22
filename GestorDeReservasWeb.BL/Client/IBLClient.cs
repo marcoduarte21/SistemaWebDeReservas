@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorDeReservasWeb.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace GestorDeReservasWeb.BL.Client
     public interface IBLClient
     {
         public void AgendarCita(Model.Appoinment appoinment);
-        public List<Model.Appoinment> GetListCitasProgramadas();
+        public List<Model.Appoinment> GetListCitasProgramadas(User user);
 
     }
 }
