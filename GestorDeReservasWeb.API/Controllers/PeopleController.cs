@@ -22,5 +22,13 @@ namespace GestorDeReservasWeb.API.Controllers
         {
             return businessLogic.GetAppoinments().ToList();
         }
+
+        [HttpPost("RegisterAppoinment")]
+        public IActionResult RegisterAppoinment([FromBody]Model.Appoinment appoinment)
+        {
+            businessLogic.RegisterAppoinment(appoinment);
+            return Ok(appoinment);
+        }
+
     }
 }
