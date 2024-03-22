@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GestorDeReservasWeb.BL.Admin;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestorDeReservasWeb.API.Controllers
@@ -8,7 +9,7 @@ namespace GestorDeReservasWeb.API.Controllers
     public class PersonaController : ControllerBase
     {
         DA.DbContexto DbContexto;
-        BL.BusinessLogicReservation BusinessLogicReservation;
+        BusinessLogicAdmin BusinessLogicReservation;
 
         public PersonaController(DA.DbContexto dbContexto)
         {
