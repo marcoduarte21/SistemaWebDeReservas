@@ -14,17 +14,29 @@ namespace GestorDeReservasWeb.BL.Admin
 
         public void EditeLaCita(Appoinment appoinment)
         {
-            throw new NotImplementedException();
+            DbContexto.Appoinments.Update(appoinment);
+            DbContexto.SaveChanges();
         }
 
         public void ElimineLaCita(Appoinment appoinment)
         {
-            throw new NotImplementedException();
+            Model.Appoinment appoinmentAEliminar;
+            appoinmentAEliminar = GetAppoinment(appoinment.id);
+            appoinmentAEliminar.statte = AppoinmentState.DISPONIBLE;
+            DbContexto.Appoinments.Update(appoinmentAEliminar);
+            DbContexto.SaveChanges();
         }
 
         public Appoinment GetAppoinment(int id)
         {
-            throw new NotImplementedException();
+           foreach(var appoiment in DbContexto.Appoinments)
+            {
+                if(appoiment.id == id)
+                {
+                    return appoiment;
+                }
+            }
+            return null;
         }
 
         public List<Appoinment> GetAppoinments()
@@ -34,7 +46,13 @@ namespace GestorDeReservasWeb.BL.Admin
 
         public Model.Employee GetEmployee(string id)
         {
-            throw new NotImplementedException();
+            foreach (var employee in DbContexto.Employees)            {
+                if (employee.employeeId == id)
+                {
+                    return employee;
+                }
+            }
+            return null;
         }
 
         public List<Model.Employee> GetEmployees()
@@ -44,12 +62,22 @@ namespace GestorDeReservasWeb.BL.Admin
 
         public People GetPerson(int id)
         {
-            throw new NotImplementedException();
+            foreach (var person in DbContexto.People)
+            {
+                if (person.id == id)
+                {
+                    return person;
+                }
+            }
+            return null;
         }
 
         public List<Appoinment> GetProgrammedAppoinments()
         {
-            return DbContexto.Appoinments.ToList();
+            var listaDeCitasProgramadas = from appoinment in DbContexto.Appoinments
+                                          where appoinment.statte == AppoinmentState.RESERVADA
+                                          select appoinment;
+            return listaDeCitasProgramadas.ToList();
         }
 
         public User GetUser(string id)
