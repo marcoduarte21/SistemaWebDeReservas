@@ -9,9 +9,20 @@ namespace GestorDeReservasWeb.BL.Employee
 {
     public class BLEmployee : IBLEmployee
     {
-        public List<Appoinment> GetListCitasProgramadas()
+
+        private DA.DbContexto DbContexto;
+        public BLEmployee(DA.DbContexto dbContexto)
         {
-            throw new NotImplementedException();
+            DbContexto = dbContexto;
+        }
+
+        public List<Appoinment> GetListCitasProgramadas(Model.Employee employee)
+        {
+            var list = from appoinment in DbContexto.Appoinments
+                       where appoinment.employeeInChange.employeeId ==employee.employeeId
+                       select appoinment;
+
+            return list.ToList();
         }
     }
 }

@@ -8,6 +8,6 @@ namespace GestorDeReservasWeb.BL.Employee
 {
     public interface IBLEmployee
     {
-        public List<Model.Appoinment> GetListCitasProgramadas();
+        public List<Model.Appoinment> GetListCitasProgramadas(Model.Employee employee);
     }
 }
