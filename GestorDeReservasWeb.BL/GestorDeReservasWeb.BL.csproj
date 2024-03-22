@@ -11,8 +11,4 @@
     <ProjectReference Include="..\GestorDeReservasWeb.Model\GestorDeReservasWeb.Model.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Employee\" />
-  </ItemGroup>
-
 </Project>

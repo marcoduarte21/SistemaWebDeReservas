@@ -5,15 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestorDeReservasWeb.BL.Client
+namespace GestorDeReservasWeb.BL.Employee
 {
-    public class BLClient : IBLClient
+    public class BLEmployee : IBLEmployee
     {
-        public void AgendarCita(Appoinment appoinment)
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Appoinment> GetListCitasProgramadas()
         {
             throw new NotImplementedException();
