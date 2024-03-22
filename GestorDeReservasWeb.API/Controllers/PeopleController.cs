@@ -6,21 +6,21 @@ namespace GestorDeReservasWeb.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonaController : ControllerBase
+    public class PeopleController : ControllerBase
     {
         DA.DbContexto DbContexto;
-        BusinessLogicAdmin BusinessLogicReservation;
+        BusinessLogicAdmin businessLogic;
 
-        public PersonaController(DA.DbContexto dbContexto)
+        public PeopleController(DA.DbContexto dbContexto)
         {
             DbContexto = dbContexto;
-            BusinessLogicReservation = new BL.BusinessLogicReservation(dbContexto);
+            businessLogic = new BusinessLogicAdmin(dbContexto);
         }
 
-        [HttpGet("GetReservations")]
+        [HttpGet("GetAppoinments")]
         public List<Model.Appoinment> GetReservations()
         {
-            return BusinessLogicReservation.GetAllReservacion();
+            return businessLogic.GetAppoinments().ToList();
         }
     }
 }

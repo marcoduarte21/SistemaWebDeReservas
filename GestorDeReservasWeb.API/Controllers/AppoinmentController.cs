@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GestorDeReservasWeb.API.Controllers
 {
-    public class ReservationController : Controller
+    public class AppoinmentController : Controller
     {
         // GET: ReservationController
         public ActionResult Index()
