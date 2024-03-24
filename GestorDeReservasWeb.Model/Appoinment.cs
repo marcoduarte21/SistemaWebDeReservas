@@ -11,8 +11,8 @@ namespace GestorDeReservasWeb.Model
         public int id {  get; set; }
         public DateTime datte { get; set; }
         public TipoDeCita appoinmentType { get; set; }
-        public User clientUser { get; set; }
-        public Employee employeeInChange { get; set; }
+        public string clientUser { get; set; }
+        public string employeeInChange { get; set; }
         public AppoinmentState statte { get; set; } 
     }
 }

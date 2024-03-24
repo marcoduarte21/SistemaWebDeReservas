@@ -19,7 +19,7 @@ namespace GestorDeReservasWeb.BL.Employee
         public List<Appoinment> GetListCitasProgramadas(Model.Employee employee)
         {
             var list = from appoinment in DbContexto.Appoinments
-                       where appoinment.employeeInChange.employeeId ==employee.employeeId
+                       where appoinment.employeeInChange ==employee.employeeId
                        select appoinment;
 
             return list.ToList();

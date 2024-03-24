@@ -12,12 +12,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IBusinessLogicAdmin, IBusinessLogicAdmin>();
-builder.Services.AddScoped<IBLClient, IBLClient>();
-builder.Services.AddScoped<IBLEmployee, IBLEmployee>();
+builder.Services.AddScoped<IBusinessLogicAdmin, BusinessLogicAdmin>();
+builder.Services.AddScoped<IBLClient, BLClient>();
+builder.Services.AddScoped<IBLEmployee, BLEmployee>();
 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<DbContext>(x => x.UseSqlServer(connectionString));
+builder.Services.AddDbContext<GestorDeReservasWeb.DA.DbContexto>(x => x.UseSqlServer(connectionString));
 
 var app = builder.Build();
 

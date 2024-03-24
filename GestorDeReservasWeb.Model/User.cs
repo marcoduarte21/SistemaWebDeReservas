@@ -9,7 +9,7 @@ namespace GestorDeReservasWeb.Model
     public class User
     {
        public string userId {  get; set; }
-        public string idPerson { get; set; }
+        public int idPerson { get; set; }
         public string passwordd { get; set; }
         public Rol rolle { get; set; }
     }

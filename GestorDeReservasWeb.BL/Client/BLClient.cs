@@ -61,7 +61,7 @@ namespace GestorDeReservasWeb.BL.Client
         public List<Appoinment> GetListCitasProgramadas(User user)
         {
             var list = from appoinment in DbContexto.Appoinments
-                       where appoinment.statte == AppoinmentState.RESERVADA && appoinment.clientUser.userId == user.userId
+                       where appoinment.statte == AppoinmentState.RESERVADA && appoinment.clientUser == user.userId
                        select appoinment;
 
             return list.ToList();

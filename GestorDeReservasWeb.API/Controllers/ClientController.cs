@@ -19,12 +19,13 @@ namespace GestorDeReservasWeb.API.Controllers
             }
 
         [HttpPut("AgendarCita")]
-        public IActionResult AgendarCita(Model.Appoinment appoinment)
+        public IActionResult AgendarCita(int id)
         {
             if(ModelState.IsValid)
             {
+                Model.Appoinment appoinment = businessLogic.GetAppoinment(id);
                 businessLogic.AgendarCita(appoinment);
-                return Ok();
+                return Ok(appoinment);
             }
             else
             {
