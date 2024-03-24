@@ -8,7 +8,6 @@ namespace GestorDeReservasWeb.Model
         public int id { get; set; }
         public string idCard { get; set; }
         public string name { get; set; }
-        
         public string firstSurname { get; set; }
         public string secondSurname { get;set; }
         public string email { get; set; }
