@@ -25,6 +25,15 @@ namespace GestorDeReservasWeb.BL.Client
            
         }
 
+        void IBLClient.EliminarLaCita(Appoinment appoinment)
+        {
+            Model.Appoinment appoinmentAEliminar;
+            appoinmentAEliminar = GetAppoinment(appoinment.id);
+            appoinmentAEliminar.statte = AppoinmentState.DISPONIBLE;
+            DbContexto.Appoinments.Update(appoinmentAEliminar);
+            DbContexto.SaveChanges();
+        }
+
         List<Appoinment> IBLClient.GetListCitasProgramadas(User user)
         {
             var list = from appoinment in DbContexto.Appoinments

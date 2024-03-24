@@ -11,6 +11,8 @@ namespace GestorDeReservasWeb.BL.Client
     {
         public void AgendarCita(Model.Appoinment appoinment);
         public List<Model.Appoinment> GetListCitasProgramadas(User user);
+        public void EliminarLaCita(Model.Appoinment appoinment);
+        public void GetAppoinment(int id);
 
     }
 }
