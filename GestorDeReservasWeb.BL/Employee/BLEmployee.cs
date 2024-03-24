@@ -24,5 +24,26 @@ namespace GestorDeReservasWeb.BL.Employee
 
             return list.ToList();
         }
+
+        public Appoinment GetAppoinment(int id)
+        {
+            foreach (var appoiment in DbContexto.Appoinments)
+            {
+                if (appoiment.id == id)
+                {
+                    return appoiment;
+                }
+            }
+            return null;
+        }
+
+        public void TermineLaCita(Appoinment appoinment)
+        {
+            Model.Appoinment appoinmentAEliminar;
+            appoinmentAEliminar = GetAppoinment(appoinment.id);
+            appoinmentAEliminar.statte = AppoinmentState.FINALIZADA;
+            DbContexto.Appoinments.Update(appoinmentAEliminar);
+            DbContexto.SaveChanges();
+        }
     }
 }
