@@ -18,6 +18,5 @@ namespace GestorDeReservasWeb.API.Controllers
                 businessLogic = new BLClient(dbContexto);
             }
 
-
         }
 }

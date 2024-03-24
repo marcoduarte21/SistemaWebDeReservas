@@ -34,6 +34,18 @@ namespace GestorDeReservasWeb.BL.Client
             DbContexto.SaveChanges();
         }
 
+        public Appoinment GetAppoinment(int id)
+        {
+            foreach (var appoiment in DbContexto.Appoinments)
+            {
+                if (appoiment.id == id)
+                {
+                    return appoiment;
+                }
+            }
+            return null;
+        }
+
         List<Appoinment> IBLClient.GetListCitasProgramadas(User user)
         {
             var list = from appoinment in DbContexto.Appoinments
