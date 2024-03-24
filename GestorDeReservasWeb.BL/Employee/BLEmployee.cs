@@ -45,5 +45,17 @@ namespace GestorDeReservasWeb.BL.Employee
             DbContexto.Appoinments.Update(appoinmentAEliminar);
             DbContexto.SaveChanges();
         }
+
+        public Model.Employee GetEmployee(string id)
+        {
+            foreach (var employee in DbContexto.Employees)
+            {
+                if (employee.employeeId == id)
+                {
+                    return employee;
+                }
+            }
+            return null;
+        }
     }
 }

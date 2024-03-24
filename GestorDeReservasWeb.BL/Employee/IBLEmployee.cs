@@ -11,5 +11,6 @@ namespace GestorDeReservasWeb.BL.Employee
         public List<Model.Appoinment> GetListCitasProgramadas(Model.Employee employee);
         public void TermineLaCita(Model.Appoinment appoinment);
         public Model.Appoinment GetAppoinment(int id);
+        public Model.Employee GetEmployee(string id);
     }
 }
