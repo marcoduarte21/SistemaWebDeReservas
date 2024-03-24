@@ -104,7 +104,7 @@ namespace GestorDeReservasWeb.API.Controllers
             if (ModelState.IsValid)
             {
                 businessLogic.EditeLaCita(appoinment);
-                return Ok();
+                return Ok(appoinment);
             }
             else
             {
