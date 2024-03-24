@@ -29,12 +29,13 @@ namespace GestorDeReservasWeb.API.Controllers
         }
 
         [HttpPut("TermineLaCita")]
-        public IActionResult TermineLaCita(Model.Appoinment appoinment)
+        public IActionResult TermineLaCita(int id)
         {
             if (ModelState.IsValid)
             {
+                Model.Appoinment appoinment = businessLogic.GetAppoinment(id);
                 businessLogic.TermineLaCita(appoinment);
-                return Ok();
+                return Ok(appoinment);
             }
             else
             {
