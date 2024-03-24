@@ -46,7 +46,19 @@ namespace GestorDeReservasWeb.BL.Client
             return null;
         }
 
-        List<Appoinment> IBLClient.GetListCitasProgramadas(User user)
+        public User GetUser(string id)
+        {
+            foreach (var user in DbContexto.Users)
+            {
+                if (user.userId == id)
+                {
+                    return user;
+                }
+            }
+            return null;
+        }
+
+        public List<Appoinment> GetListCitasProgramadas(User user)
         {
             var list = from appoinment in DbContexto.Appoinments
                        where appoinment.statte == AppoinmentState.RESERVADA && appoinment.clientUser.userId == user.userId
