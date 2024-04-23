@@ -27,19 +27,27 @@ export const TableUsers: React.FC<TableUsersProps> = () => {
             <h1>Lista de Usuarios</h1><Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>#</th>
-                        <th>First Name</th>
+                        <th>User Name</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Primer Apellido</th>
+                        <th>Segundo Apellido</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
                         <th>Role</th>
-                        <th>Password</th>
                     </tr>
                 </thead>
                 <tbody>
                     {ListUsers.map(user =>
                         <tr key={user.userId }>
                             <td>{user.userId}</td>
-                            <td>{user.idPerson}</td>
+                            <td>{user.idCard}</td>
+                            <td>{user.name}</td>
+                            <td>{user.firstSurname}</td>
+                            <td>{user.secondSurname}</td>
+                            <td>{user.email}</td>
+                            <td>{user.cellNumber}</td>
                             <td>{user.rolle}</td>
-                            <td>{user.passwordd}</td>
                         </tr>
                     )}
                 </tbody>

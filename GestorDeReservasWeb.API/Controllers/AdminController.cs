@@ -49,7 +49,7 @@ namespace GestorDeReservasWeb.API.Controllers
         }
 
         [HttpGet("GetUsers")]
-        public List<Model.User> GetUsers()
+        public List<Model.Users> GetUsers()
         {
             return businessLogic.GetUsers();
         }

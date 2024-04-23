@@ -15,7 +15,7 @@ namespace GestorDeReservasWeb.BL.Admin
         public void RegisterEmployee(Model.Employee employee);
         public void RegisterUser(Model.User user);
         public List<Model.Appoinment> GetAppoinments();
-        public List<Model.User> GetUsers();
+        public List<Model.Users> GetUsers();
         public List<Model.Employee> GetEmployees();
         public List<Model.Appoinment> GetProgrammedAppoinments();
         public void EditeLaCita(Model.Appoinment appoinment);

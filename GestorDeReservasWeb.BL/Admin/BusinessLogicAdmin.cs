@@ -92,9 +92,25 @@ namespace GestorDeReservasWeb.BL.Admin
             return null;
         }
 
-        public List<User> GetUsers()
+        public List<Model.Users> GetUsers()
         {
-            return DbContexto.Users.ToList();
+            var listUsers = (from user in DbContexto.Users
+                            join person in DbContexto.People
+                            on user.idPerson equals person.id
+                            select new Users
+                            {
+                                userId = user.userId,
+                                idCard = person.idCard,
+                                name = person.name,
+                                firstSurname = person.firstSurname,
+                                secondSurname = person.secondSurname,
+                                email = person.email,
+                                cellNumber = person.cellNumber,
+                                rolle = user.rolle
+                            });
+
+            return listUsers.ToList();
+
         }
 
         public void RegisterAppoinment(Appoinment appoinment)
