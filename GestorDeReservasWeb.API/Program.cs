@@ -19,6 +19,16 @@ builder.Services.AddScoped<IBLEmployee, BLEmployee>();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<GestorDeReservasWeb.DA.DbContexto>(x => x.UseSqlServer(connectionString));
 
+// En el método ConfigureServices del archivo Startup.cs
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder.WithOrigins("http://localhost:3000"));
+});
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -27,6 +37,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+// En el método Configure del archivo Startup.cs
+app.UseCors("AllowSpecificOrigin");
 
 app.UseHttpsRedirection();
 

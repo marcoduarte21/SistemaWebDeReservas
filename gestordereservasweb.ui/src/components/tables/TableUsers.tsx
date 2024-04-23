@@ -1,43 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
+import { User } from '../../models/User';
+import * as API  from '../../apirest/AppoinmentApi'
 
-function TableUsers() {
+interface TableUsersProps {
+
+}
+
+export const TableUsers: React.FC<TableUsersProps> = () => {
+
+    const [ListUsers, setListUsers] = useState<User[]>([]);
 
 
+    useEffect(() => {
+        getListUsers();
+    }, [])
+
+    const getListUsers = async () => {
+
+        const response = await API.getUsers();
+       setListUsers(response.data)
+    }
 
     return (
         <div className="table-users">
             <h1>Lista de Usuarios</h1><Table striped bordered hover>
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colSpan={2}>Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Role</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {ListUsers.map(user =>
+                        <tr key={user.userId }>
+                            <td>{user.userId}</td>
+                            <td>{user.idPerson}</td>
+                            <td>{user.rolle}</td>
+                            <td>{user.passwordd}</td>
+                        </tr>
+                    )}
+                </tbody>
             </Table>
         </div >
-  );
+    );
 }
-
-export default TableUsers;

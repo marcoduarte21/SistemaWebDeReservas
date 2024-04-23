@@ -1,1 +1,6 @@
-console.log("Hello World!")
+export interface User {
+    userId: string;
+    idPerson?: number;
+    passwordd: string;
+    rolle: number;
+}
