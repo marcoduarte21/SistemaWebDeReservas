@@ -6,6 +6,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
 import { TableUsers } from './components/tables/TableUsers';
+import { Home } from './views/home/Home';
+import { Loggin } from '../src/views/Auth/loggin/Loggin'
 
 function App() {
 
@@ -13,7 +15,9 @@ function App() {
       <BrowserRouter>
       <NavBar />
           <Routes>
-              <Route path='/' element={<TableUsers />} />
+              <Route path='/loggin' element={ <Loggin /> } />
+              <Route path='/' element={<Home /> } />
+              <Route path='/users' element={<TableUsers />} />
           </Routes>
       </BrowserRouter>
   );
