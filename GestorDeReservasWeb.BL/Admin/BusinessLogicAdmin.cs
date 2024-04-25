@@ -106,7 +106,8 @@ namespace GestorDeReservasWeb.BL.Admin
                                 secondSurname = person.secondSurname,
                                 email = person.email,
                                 cellNumber = person.cellNumber,
-                                rolle = user.rolle
+                                rolle = user.rolle,
+                                password = user.passwordd
                             });
 
             return listUsers.ToList();

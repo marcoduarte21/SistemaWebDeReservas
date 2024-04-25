@@ -13,5 +13,6 @@ namespace GestorDeReservasWeb.Model
         public string email { get; set; }
         public Int64 cellNumber { get; set; }
         public Rol rolle { get; set; }
+        public string password { get; set; }    
     }
 }
