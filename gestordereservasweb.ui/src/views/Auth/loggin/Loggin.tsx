@@ -23,22 +23,32 @@ export const Loggin: React.FC<LogginProps> = () => {
 
         const response = await API.getUsers();
         setListUsers(response.data)
+        console.log(response.data)
     }
-
-    const handleLogin = () => {
-        login({});
-    };
 
     const verificarInicioDeSesion = () => {
 
-        const userNameInput = document.querySelector("#username");
-        const passwordInput = document.querySelector("#clave");
+        const inputUserName = document.getElementById("username") as HTMLInputElement;
+        const inputPassword = document.getElementById("clave") as HTMLInputElement;
 
-        ListUsers.map(user =>
-            if (user.userId? == userNameInput && user.password¡ == passwordInput) {
-            setUser(user);
-        }
-        );
+        // Acceder al valor del campo de contraseña
+        const textoContrasena: string = inputPassword.value;
+        const textoUserName: string = inputUserName.value;
+        
+        ListUsers.map(userr => {
+
+            if (userr.userId == textoUserName && userr.password == textoContrasena) {
+                setUser(userr);
+                window.location.href = "/";
+            } else {
+                const miParrafo = document.querySelector("#aviso");
+                if (miParrafo) {
+                    miParrafo.innerHTML = "User or password incorrect";
+                } else {
+                    console.error("No se encontró el elemento.");
+                }
+            }
+        });
     }
 
 
@@ -54,7 +64,8 @@ export const Loggin: React.FC<LogginProps> = () => {
                     <input type='password' placeholder="Clave" id='clave' name='clave'/>
                 </div>
                 <div>
-                    <button onClick={handleLogin}>iniciar sesion</button>
+                    <button onClick={verificarInicioDeSesion}>iniciar sesion</button>
+                    <p id="aviso"></p>
                 </div>
             </div>
         </div>
