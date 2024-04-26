@@ -15,6 +15,7 @@
     <Folder Include="src\apirest\" />
     <Folder Include="src\models\" />
     <Folder Include="src\hooks\" />
+    <Folder Include="src\context\" />
     <Folder Include="src\views\home\" />
   </ItemGroup>
 </Project>
