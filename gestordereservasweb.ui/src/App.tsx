@@ -8,18 +8,27 @@ import { Nav } from 'react-bootstrap';
 import { TableUsers } from './components/tables/TableUsers';
 import { Home } from './views/home/Home';
 import { Loggin } from '../src/views/Auth/loggin/Loggin'
+import { AuthContext } from "./context/AuthContext";
+import { useAuth } from "./hooks/useAuth";
 
 function App() {
 
-  return (
-      <BrowserRouter>
+    const { user, login, logout, setUser } = useAuth();
+
+    return (
+
+      
+        <BrowserRouter>
+            <AuthContext.Provider value={{ user, setUser }}>
       <NavBar />
           <Routes>
               <Route path='/loggin' element={ <Loggin /> } />
               <Route path='/' element={<Home /> } />
               <Route path='/users' element={<TableUsers />} />
-          </Routes>
-      </BrowserRouter>
+                </Routes>
+            </AuthContext.Provider>
+            </BrowserRouter>
+       
   );
 }
 

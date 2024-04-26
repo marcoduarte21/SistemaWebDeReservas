@@ -1,5 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuth } from '../../../hooks/useAuth';
+import { User } from '../../../models/User';
 import './Loggin.css';
+import * as API from '../../../apirest/AppoinmentApi'
+
 
 interface LogginProps {
 
@@ -7,10 +11,36 @@ interface LogginProps {
 
 export const Loggin: React.FC<LogginProps> = () => {
 
-    useEffect(() => {
+    const { login, user, setUser } = useAuth();
+    const [ListUsers, setListUsers] = useState<User[]>([]);
 
-        document.title = 'Loggin';
-    },[])
+
+    useEffect(() => {
+        getListUsers();
+    }, [])
+
+    const getListUsers = async () => {
+
+        const response = await API.getUsers();
+        setListUsers(response.data)
+    }
+
+    const handleLogin = () => {
+        login({});
+    };
+
+    const verificarInicioDeSesion = () => {
+
+        const userNameInput = document.querySelector("#username");
+        const passwordInput = document.querySelector("#clave");
+
+        ListUsers.map(user =>
+            if (user.userId? == userNameInput && user.password¡ == passwordInput) {
+            setUser(user);
+        }
+        );
+    }
+
 
     return (
 
@@ -24,7 +54,7 @@ export const Loggin: React.FC<LogginProps> = () => {
                     <input type='password' placeholder="Clave" id='clave' name='clave'/>
                 </div>
                 <div>
-                    <button>iniciar sesion</button>
+                    <button onClick={handleLogin}>iniciar sesion</button>
                 </div>
             </div>
         </div>

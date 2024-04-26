@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useUser } from "./useUser";
-import { User } from "./User"
+import { User } from "./../models/User"
 import { useLocalStorage } from "./useLocaleStorage";
 
 
